@@ -34,7 +34,9 @@ const authenticateToken = async (req, res, next) => {
     next();
   } catch (error) {
     if (error.name === "JsonWebTokenError") {
+      console.error("Erreur JWT:", error); 
       return res.status(401).json({
+        
         success: false,
         message: "Token invalide",
       });

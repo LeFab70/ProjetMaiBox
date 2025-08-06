@@ -6,7 +6,7 @@ const { AuthenticationError, ValidationError } = require('../middlewares/errorHa
 const generateToken = (userId) => {
   return jwt.sign(
     { userId },
-    process.env.JWT_SECRET || 'X9V6gR!zC3q@fKm#7Ls0tA$eN1uHwPgY',
+    process.env.JWT_SECRET,
     { expiresIn: process.env.JWT_EXPIRES_IN || '24h' }
   );
 };
